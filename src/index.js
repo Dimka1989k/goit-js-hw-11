@@ -30,6 +30,7 @@ async function onSearch(e) {
       Notiflix.Notify.warning('Enter your search query');
     } else {
       const response = await newsApiService.fetchApi();
+
       const {
         data: { hits, total, totalHits },
       } = response;
@@ -49,6 +50,7 @@ async function onSearch(e) {
     Notiflix.Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
+
     console.log(error.message);
   }
 }
